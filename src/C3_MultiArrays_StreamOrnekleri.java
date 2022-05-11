@@ -1,3 +1,7 @@
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class C3_MultiArrays_StreamOrnekleri {
     //multi arrayleri cevirirken flapMap kullaniriz yapilis sekli iki turludur
 //1) lamda kullanarak
@@ -16,7 +20,9 @@ public class C3_MultiArrays_StreamOrnekleri {
 
     }
     // S1 : tum elemanlari list yapalim
-
+public static List<String> listele(String[][] str){
+        return Arrays.stream(str).flatMap(t->Arrays.stream(t)).collect(Collectors.toList());
+}
 
 
     // S2: E ile baslayan elemanlari double (elmaelma) olarak yazdiralim

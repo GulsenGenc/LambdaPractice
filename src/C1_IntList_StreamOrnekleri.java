@@ -28,6 +28,7 @@ public class C1_IntList_StreamOrnekleri {
         System.out.println("listede 100 e eşit eleman yok mu?-->"+yuzeEsıtElemanYokMu(list));
         System.out.println("listede 0 a eşit eleman yok mu?-->"+sıfıraEsıtElemenYokMu(list));
         ilkBesElemanıTopla(list);
+        System.out.println("son 5 elemanın listesi-->"+sonBesElemanıListele(list));
     }
 
     // S1:listi aralarinda bosluk birakarak yazdiriniz //
@@ -115,8 +116,10 @@ public class C1_IntList_StreamOrnekleri {
         System.out.println("ilk 5 elemanın toplamı-->"+l.stream().limit(5).reduce(0, Integer::sum));
     }
 
-
     //S17: listenin son bes elemaninin  listele
+    public static List<Integer> sonBesElemanıListele(List<Integer> l){
+        return l.stream().skip(l.size()-3).collect(Collectors.toList());
+    }
 
 
 }
